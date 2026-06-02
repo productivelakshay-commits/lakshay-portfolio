@@ -41,15 +41,17 @@ export function Navbar() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
           >
-            <motion.div
-              className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center shadow-lg shadow-violet-500/30"
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-            >
-              <span className="text-white" style={{ fontSize: "0.95rem", fontWeight: 800, letterSpacing: "-0.05em" }}>MS</span>
-            </motion.div>
+            <motion.img
+              src="/logo-sm.png"
+              alt="Motion Studio logo"
+              width={40}
+              height={40}
+              className="w-10 h-10 rounded-xl shadow-lg shadow-violet-500/30"
+              whileHover={{ rotate: 6 }}
+              transition={{ type: "spring", stiffness: 300, damping: 18 }}
+            />
             <span
-              className="text-white"
+              className="text-white hidden sm:inline"
               style={{ fontSize: "1.2rem", fontWeight: 700, letterSpacing: "-0.02em" }}
             >
               Motion<span className="text-violet-400"> Studio</span>

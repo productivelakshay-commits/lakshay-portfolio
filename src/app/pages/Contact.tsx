@@ -717,9 +717,9 @@ export function Contact() {
       </section>
 
       <footer className="py-8 px-6 border-t border-white/5 text-center text-white/30" style={{ fontSize: "0.85rem" }}>
-        <p className="flex items-center justify-center gap-2">
-          <span className="inline-flex w-5 h-5 rounded-md bg-gradient-to-br from-violet-500 to-fuchsia-500 items-center justify-center" style={{ fontSize: "0.55rem", fontWeight: 800, color: "white" }}>MS</span>
-          © 2026 Motion Studio · Built with React, Motion & Tailwind
+        <p className="flex items-center justify-center gap-2 flex-wrap">
+          <img src="/logo-sm.png" alt="" width={20} height={20} className="w-5 h-5 rounded-md" />
+          © {new Date().getFullYear()} Motion Studio · Built with React, Motion & Tailwind
         </p>
       </footer>
     </motion.div>

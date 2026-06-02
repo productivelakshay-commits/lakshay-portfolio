@@ -321,6 +321,7 @@ export function Home() {
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1651241678859-96f075bf6780?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYXB0b3AlMjB3b3Jrc3BhY2UlMjBjcmVhdGl2ZSUyMGRlc2lnbmVyJTIwcG9ydGZvbGlvfGVufDF8fHx8MTc3ODQ5NzQ2Mnww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Creative workspace"
+                loading="lazy"
                 className="w-full h-[400px] md:h-[550px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050510] via-transparent to-transparent" />
@@ -430,9 +431,9 @@ export function Home() {
 
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-white/5 text-center text-white/30" style={{ fontSize: "0.85rem" }}>
-        <p className="flex items-center justify-center gap-2">
-          <span className="inline-flex w-5 h-5 rounded-md bg-gradient-to-br from-violet-500 to-fuchsia-500 items-center justify-center" style={{ fontSize: "0.55rem", fontWeight: 800, color: "white" }}>MS</span>
-          © 2026 Motion Studio · Built with React, Motion & Tailwind
+        <p className="flex items-center justify-center gap-2 flex-wrap">
+          <img src="/logo-sm.png" alt="" width={20} height={20} className="w-5 h-5 rounded-md" />
+          © {new Date().getFullYear()} Motion Studio · Built with React, Motion & Tailwind
         </p>
       </footer>
     </motion.div>

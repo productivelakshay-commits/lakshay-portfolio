@@ -232,7 +232,7 @@ function ProjectCard({ project, index, onOpen }: { project: Project; index: numb
             animate={{ scale: hovered ? 1.08 : 1 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
-            <ImageWithFallback src={project.image} alt={project.title} className="w-full h-full object-cover" />
+            <ImageWithFallback src={project.image} alt={project.title} loading="lazy" className="w-full h-full object-cover" />
           </motion.div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#050510] via-[#050510]/50 to-transparent" />
           <motion.div className="absolute inset-0" style={{ background: project.gradient }} animate={{ opacity: hovered ? 0.2 : 0 }} transition={{ duration: 0.3 }} />
@@ -409,7 +409,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
       >
         {/* Hero */}
         <div className="relative h-56 overflow-hidden rounded-t-3xl">
-          <ImageWithFallback src={project.image} alt={project.title} className="w-full h-full object-cover" />
+          <ImageWithFallback src={project.image} alt={project.title} loading="lazy" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#08041a] via-[#08041a]/50 to-transparent" />
           <motion.div className="absolute inset-0" style={{ background: project.gradient, opacity: 0.18 }} />
 
@@ -782,6 +782,7 @@ export function Work() {
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1621111848501-8d3634f82336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXNpZ24lMjBwb3J0Zm9saW8lMjBjcmVhdGl2ZSUyMGRhcmslMjBVSXxlbnwxfHx8fDE3Nzg3NjcxMTZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Featured project"
+                loading="lazy"
                 className="w-full h-[380px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#050510] via-[#050510]/70 to-transparent" />
@@ -939,9 +940,9 @@ export function Work() {
 
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-white/5 text-center text-white/30" style={{ fontSize: "0.85rem" }}>
-        <p className="flex items-center justify-center gap-2">
-          <span className="inline-flex w-5 h-5 rounded-md bg-gradient-to-br from-violet-500 to-fuchsia-500 items-center justify-center" style={{ fontSize: "0.55rem", fontWeight: 800, color: "white" }}>MS</span>
-          © 2026 Motion Studio · Built with React, Motion & Tailwind
+        <p className="flex items-center justify-center gap-2 flex-wrap">
+          <img src="/logo-sm.png" alt="" width={20} height={20} className="w-5 h-5 rounded-md" />
+          © {new Date().getFullYear()} Motion Studio · Built with React, Motion & Tailwind
         </p>
       </footer>
 
