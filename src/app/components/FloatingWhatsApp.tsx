@@ -8,7 +8,7 @@ export function FloatingWhatsApp() {
       href={whatsappUrl()}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Message Lakshay on WhatsApp"
+      aria-label="Message Motion Studio on WhatsApp"
       className="fixed bottom-6 right-6 z-[60] flex items-center gap-2 px-4 py-3 rounded-full bg-[#25d366] text-white shadow-2xl"
       style={{ boxShadow: "0 8px 32px rgba(37,211,102,0.45)" }}
       initial={{ scale: 0, opacity: 0, y: 30 }}

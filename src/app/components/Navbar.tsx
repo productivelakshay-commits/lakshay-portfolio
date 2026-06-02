@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Zap, MessageCircle } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { whatsappUrl } from "../lib/contact";
 
 const links = [
@@ -42,17 +42,17 @@ export function Navbar() {
             whileTap={{ scale: 0.97 }}
           >
             <motion.div
-              className="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center shadow-lg shadow-violet-500/30"
+              className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center shadow-lg shadow-violet-500/30"
               animate={{ rotate: [0, 360] }}
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
             >
-              <Zap size={18} className="text-white" />
+              <span className="text-white" style={{ fontSize: "0.95rem", fontWeight: 800, letterSpacing: "-0.05em" }}>MS</span>
             </motion.div>
             <span
               className="text-white"
-              style={{ fontSize: "1.25rem", fontWeight: 700, letterSpacing: "-0.02em" }}
+              style={{ fontSize: "1.2rem", fontWeight: 700, letterSpacing: "-0.02em" }}
             >
-              Lakshay<span className="text-violet-400">.</span>
+              Motion<span className="text-violet-400"> Studio</span>
             </span>
           </motion.div>
         </Link>

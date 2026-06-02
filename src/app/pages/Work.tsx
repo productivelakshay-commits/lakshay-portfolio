@@ -8,7 +8,7 @@ import { LabGrid } from "../components/lab/LabGrid";
 import { whatsappUrl } from "../lib/contact";
 
 /* ─── Types ──────────────────────────────────── */
-type Category = "All" | "SaaS" | "AI Tools" | "Mobile" | "E-Commerce";
+type Category = "All" | "SaaS" | "AI Tools" | "Mobile" | "E-Commerce" | "Brand";
 
 interface Project {
   id: number;
@@ -49,9 +49,99 @@ const projects: Project[] = [
     githubUrl: "",
     status: "Case Study",
   },
+  {
+    id: 2,
+    title: "Lume Glow IQ",
+    tagline: "AI Skincare Consultant Quiz",
+    category: "AI Tools",
+    tags: ["React", "Vite", "Tailwind", "Motion"],
+    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    color: "#C97B5F",
+    gradient: "linear-gradient(135deg, #E8B8A0, #C97B5F)",
+    metric: "5 Qs",
+    metricLabel: "Personalized Routine",
+    year: "2026",
+    desc: "A 5-question quiz that builds a personalised skincare routine in under 60 seconds. Mock-AI engine reflects every user answer; one-function swap to wire real Claude API later.",
+    features: ["State-machine quiz flow", "Personalised AI-style intro", "3–6 step routine generator", "Email capture (Google Sheets)", "Pure static SPA, ₹0 hosting"],
+    liveUrl: "#",
+    githubUrl: "",
+    status: "Live",
+  },
+  {
+    id: 3,
+    title: "Lume Skincare",
+    tagline: "D2C Skincare Brand Landing",
+    category: "E-Commerce",
+    tags: ["React", "Vite", "Tailwind", "Motion"],
+    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    color: "#E8B8A0",
+    gradient: "linear-gradient(135deg, #FBF5EE, #E8B8A0)",
+    metric: "Live",
+    metricLabel: "Landing Page",
+    year: "2026",
+    desc: "A warm, editorial landing page for a premium skincare brand — hero, featured products, ritual builder, testimonials, newsletter. Cream/peach palette and Cormorant serif typography.",
+    features: ["Hero with parallax animations", "Featured products grid", "Routine builder section", "Newsletter capture", "Mobile-first responsive"],
+    liveUrl: "#",
+    githubUrl: "",
+    status: "Live",
+  },
+  {
+    id: 4,
+    title: "Premium Skincare",
+    tagline: "Editorial Skincare Portfolio",
+    category: "E-Commerce",
+    tags: ["React", "Vite", "Tailwind", "Motion"],
+    image: "https://images.unsplash.com/photo-1585945037805-5fd82c2e60b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    color: "#8B6F47",
+    gradient: "linear-gradient(135deg, #D4B996, #8B6F47)",
+    metric: "Live",
+    metricLabel: "Portfolio",
+    year: "2026",
+    desc: "An editorial portfolio that turns skincare into a quiet luxury brand. Magazine-style typography, generous whitespace, photography-led product storytelling.",
+    features: ["Magazine layout grid", "Smooth scroll animations", "Product detail reveals", "Testimonials carousel", "Premium typography"],
+    liveUrl: "#",
+    githubUrl: "",
+    status: "Live",
+  },
+  {
+    id: 5,
+    title: "Healthy Chef",
+    tagline: "Food & Wellness Brand",
+    category: "E-Commerce",
+    tags: ["React", "Vite", "Tailwind", "Motion"],
+    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    color: "#84cc16",
+    gradient: "linear-gradient(135deg, #bef264, #65a30d)",
+    metric: "Live",
+    metricLabel: "Brand Site",
+    year: "2026",
+    desc: "A wellness-forward brand site for a personal chef — recipes, services, weekly menu CTAs, and a calm green-and-cream palette that signals nourishment.",
+    features: ["Recipe gallery", "Weekly menu CTA", "Booking-style sections", "Earthy palette", "Motion-led scroll story"],
+    liveUrl: "#",
+    githubUrl: "",
+    status: "Live",
+  },
+  {
+    id: 6,
+    title: "MC Pura",
+    tagline: "Cinematic Luxury Portfolio",
+    category: "Brand",
+    tags: ["React", "Vite", "Tailwind", "Motion"],
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    color: "#a78bfa",
+    gradient: "linear-gradient(135deg, #1e1b4b, #a78bfa)",
+    metric: "Live",
+    metricLabel: "Personal Brand",
+    year: "2026",
+    desc: "A cinematic, dark-mode personal brand portfolio. Heavy on hero motion, full-bleed imagery, and slow reveal scroll choreography — the kind of site that lingers in memory.",
+    features: ["Full-bleed hero video feel", "Cinematic scroll reveals", "Dark luxury palette", "Custom cursor effects", "Premium animation rhythm"],
+    liveUrl: "#",
+    githubUrl: "",
+    status: "Live",
+  },
 ];
 
-const categories: Category[] = ["All", "AI Tools"];
+const categories: Category[] = ["All", "AI Tools", "E-Commerce", "Brand"];
 
 const categoryIcons: Record<Category, any> = {
   All: Sparkles,
@@ -59,6 +149,7 @@ const categoryIcons: Record<Category, any> = {
   "AI Tools": Brain,
   Mobile: Smartphone,
   "E-Commerce": ShoppingCart,
+  Brand: Zap,
 };
 
 /* ─── Floating Orb ───────────────────────────── */
@@ -231,7 +322,7 @@ function ProjectCard({ project, index, onOpen }: { project: Project; index: numb
               </motion.a>
             ) : (
               <motion.a
-                href={whatsappUrl(`Hi Lakshay, I'd love a demo of ${project.title}.`)}
+                href={whatsappUrl(`Hi Motion Studio team, I'd love a demo of ${project.title}.`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-xl text-white"
@@ -421,7 +512,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
               </motion.a>
             ) : (
               <motion.a
-                href={whatsappUrl(`Hi Lakshay, I'd love a demo of ${project.title}.`)}
+                href={whatsappUrl(`Hi Motion Studio team, I'd love a demo of ${project.title}.`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-6 py-3 rounded-full text-white"
@@ -848,7 +939,10 @@ export function Work() {
 
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-white/5 text-center text-white/30" style={{ fontSize: "0.85rem" }}>
-        <p>© 2026 Lakshay Kumar · Built with React, Motion & Tailwind</p>
+        <p className="flex items-center justify-center gap-2">
+          <span className="inline-flex w-5 h-5 rounded-md bg-gradient-to-br from-violet-500 to-fuchsia-500 items-center justify-center" style={{ fontSize: "0.55rem", fontWeight: 800, color: "white" }}>MS</span>
+          © 2026 Motion Studio · Built with React, Motion & Tailwind
+        </p>
       </footer>
 
       {/* Modal */}

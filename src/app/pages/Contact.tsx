@@ -340,7 +340,17 @@ export function Contact() {
             className="text-white/50 mt-6"
             style={{ fontSize: "1.1rem", lineHeight: 1.7 }}
           >
-            Ready to elevate your digital presence? Fill in the form or reach out directly. I respond within 24 hours.
+            Ready to elevate your digital presence? Fill in the form or reach out directly. We respond within 24 hours.
+          </motion.p>
+
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.65, duration: 0.6 }}
+            className="text-white/35 mt-3"
+            style={{ fontSize: "0.85rem", letterSpacing: "0.04em" }}
+          >
+            FOUNDER · LAKSHAY KUMAR · DELHI, INDIA
           </motion.p>
 
           {/* Response time badge */}
@@ -707,7 +717,10 @@ export function Contact() {
       </section>
 
       <footer className="py-8 px-6 border-t border-white/5 text-center text-white/30" style={{ fontSize: "0.85rem" }}>
-        <p>© 2026 Lakshay Kumar · Built with React, Motion & Tailwind</p>
+        <p className="flex items-center justify-center gap-2">
+          <span className="inline-flex w-5 h-5 rounded-md bg-gradient-to-br from-violet-500 to-fuchsia-500 items-center justify-center" style={{ fontSize: "0.55rem", fontWeight: 800, color: "white" }}>MS</span>
+          © 2026 Motion Studio · Built with React, Motion & Tailwind
+        </p>
       </footer>
     </motion.div>
   );

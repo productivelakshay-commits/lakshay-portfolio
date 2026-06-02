@@ -282,7 +282,7 @@ export function Services() {
 
                       <div className="flex gap-2">
                         <motion.a
-                          href={whatsappUrl(`Hi Lakshay, I'm interested in your "${service.title}" package (${service.price}, ${service.delivery}).`)}
+                          href={whatsappUrl(`Hi Motion Studio team, I'm interested in your "${service.title}" package (${service.price}, ${service.delivery}).`)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className={`flex-1 py-3 rounded-xl bg-gradient-to-r ${service.gradient} text-white cursor-pointer flex items-center justify-center gap-2`}
@@ -521,7 +521,10 @@ export function Services() {
       </section>
 
       <footer className="py-8 px-6 border-t border-white/5 text-center text-white/30" style={{ fontSize: "0.85rem" }}>
-        <p>© 2026 Lakshay Kumar · Built with React, Motion & Tailwind</p>
+        <p className="flex items-center justify-center gap-2">
+          <span className="inline-flex w-5 h-5 rounded-md bg-gradient-to-br from-violet-500 to-fuchsia-500 items-center justify-center" style={{ fontSize: "0.55rem", fontWeight: 800, color: "white" }}>MS</span>
+          © 2026 Motion Studio · Built with React, Motion & Tailwind
+        </p>
       </footer>
     </motion.div>
   );
